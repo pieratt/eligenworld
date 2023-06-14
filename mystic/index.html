@@ -1,0 +1,128 @@
+<html lang="en">
+<head>
+    <!--
+    Please forgive my code.
+    It's rouuuuuugh as I go through and play with things by hand. I promise it will be cleaned up and inline css removed etc. Patience please and thank you.
+    -->
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=980" />
+    <link rel="stylesheet" href="../styles.css">
+
+    <title>Φ Eligen Ⓜ️ Mystic Stripmall</title>
+</head>
+<body class="sunset4">
+    <div class="container">
+
+      <p>🏕️ Vibecamp 2023</p>
+      
+      <div class="docs_card">
+        <div class="docs_card">
+            Ⓜ️ Mystic Stripmall v.01:  (<a href="https://docs.google.com/spreadsheets/d/1AwAASOflmjfYpXb0PzcHrQTfFPjWuQtQ4X47n580CkU/edit?usp=sharing" target=_blank>Full sheet</a>)
+          <hr>
+          <p>Healers & Geniuses:</p>
+          <table id="dataTable">
+            <thead>
+              <tr>
+                <th width="30%">Twitter</th>
+                <th width="20%">URL</th>
+                <th>Technique</th>
+                <!-- Add more th elements for other columns -->
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Rows will be added here by JavaScript -->
+            </tbody>
+          </table>
+          
+          <script>
+            fetch('https://script.google.com/macros/s/AKfycbzyY-RKszIzR1CAA-jXAFvCDdLZBu7LyUt6SfFkYPPjEQoZiK2IcSDKjGIsMxc5Jd6UQQ/exec')
+              .then(response => response.json())
+              .then(data => {
+                var tableBody = document.getElementById('dataTable').tBodies[0];
+                data.forEach(function(row) {
+                  var tr = document.createElement('tr');
+                  
+                  var tdTwitter = document.createElement('td');
+                  var linkTwitter = document.createElement('a');
+                  linkTwitter.innerText = row['Twitter'];
+                  linkTwitter.href = "https://twitter.com/" + row['Twitter'];
+                  linkTwitter.target = "_blank"; // This will make the link open in a new tab
+                  tdTwitter.appendChild(linkTwitter);
+                  tr.appendChild(tdTwitter);
+          
+                  var tdURL = document.createElement('td');
+                  var linkURL = document.createElement('a');
+                  linkURL.innerText = row['URL'];
+                  linkURL.href = row['URL'];
+                  linkURL.target = "_blank"; // This will make the link open in a new tab
+                  tdURL.appendChild(linkURL);
+                  tr.appendChild(tdURL);
+          
+                  var tdTechnique = document.createElement('td');
+                  tdTechnique.innerText = row['Technique'];
+                  tr.appendChild(tdTechnique);
+                
+                            
+                  tableBody.appendChild(tr);
+                });
+              });
+          </script>
+          
+            
+            
+          
+  </div>
+         <div class="docs_card">
+        Ⓜ️ Grab your space at the Mystic Stripmall:
+        <hr>
+        <form id="myForm" action="https://script.google.com/macros/s/AKfycbzyY-RKszIzR1CAA-jXAFvCDdLZBu7LyUt6SfFkYPPjEQoZiK2IcSDKjGIsMxc5Jd6UQQ/exec" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="Name" placeholder="The Great & Exalted..."><br>  
+        <label for="technique">Technique:</label><br>
+        <input type="text" id="technique" name="Technique" placeholder="IFS, Somatic, Astrology, Alexander, etc"><br>
+        <label for="url">URL:</label><br>
+        <input type="text" id="url" name="URL" placeholder="Your Website"><br>
+        <label for="twitter">Twitter:</label><br>
+        <input type="text" id="twitter" name="Twitter" placeholder="@username"><br>
+        <label for="notes">Notes:</label><br>
+        <input type="text" id="notes" name="Notes" placeholder="Use this to submit Twitter Threads and other ideas 🧵❤️‍🔥"><br>
+        <button type="submit">Submit</button>
+        <div id="message"></div>
+        </form>
+      </div>
+
+      <script>
+        document.getElementById('myForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+        
+          var formData = new FormData(e.target);
+        
+          fetch(e.target.action, {
+            method: 'POST',
+            body: formData,
+          })
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById('message').innerText = data.result == "success" ? "Great Success. Please refresh the page to see your data ^_^" : "There was an error.";
+          })
+          .catch(error => {
+            console.error(error);
+            document.getElementById('message').innerText = "There was an error.";
+          });
+        });
+        </script>
+      
+</div>
+
+      <div id="nav"></div>
+      <div id="footer"></div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $(function(){
+      $("#nav").load("../nav.html");
+      $("#footer").load("../footer.html");
+    });
+  </script>
+  </body>
+  </html>

@@ -38,7 +38,7 @@ body {
 
 @font-face {
     font-family: 'relative-mono-12-pitch-pro';
-    src: url('fonts/elative-mono-12-pitch-pro.woff2') format('woff2'),
+    src: url('fonts/relative-mono-12-pitch-pro.woff2') format('woff2'),
         url('fonts/relative-mono-12-pitch-pro.woff') format('woff'),
         url('fonts/relative-mono-12-pitch-pro.ttf') format('truetype');
     font-weight: normal;
@@ -247,33 +247,37 @@ h4 {
     border-radius:5px;
 }
 
+
 form {
     display: flex;
     flex-direction: column;
     align-items: left;
-
+    width:100%;
+}
+label {
+    margin-bottom:-15px;
 }
 
-
-label, input, button {
-    margin-bottom: 20px;
-    padding:50px;
+input, button {
+    padding:15px;
+    width:100%;
 }
 
 button {
-    background-color: #333;
-    color: #fff;
-    padding: 1.5rem 1rem;
-    border: none;
-    cursor: pointer;
+    border: 2px outset #ccc;
     border-radius:10px;
-    margin: 0 20px 20px 20px;
+    display:block; 
+    width:100%; 
+    text-align:center; 
+    cursor:pointer;
+    padding:10px 0; 
+    margin: 0 0 10px;
+    color:#656565; 
 }
-
 button:hover {
-    background-color: #444;
+    color:#393939; 
+    border-radius:20px;
 }
-
 .output {
     border: 0px solid #333;
 
@@ -327,6 +331,13 @@ li {
 }
 
 
+#dataTable td {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    max-width: 40px; /* Adjust this as per your needs */
+  }
+  
 table {
     color:#333;
     width: 100%;
@@ -342,6 +353,7 @@ table {
 th, td {
     padding: 4px 8px;
     text-align: left;
+
 }
 th {
     background-color: #cccccc00;
