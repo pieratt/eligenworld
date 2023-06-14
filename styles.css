@@ -89,7 +89,7 @@ body {
     text-align:center; 
     padding:10px 0; 
     margin: 0 0 10px;
-    color:#b0b0b0; 
+    color:#636363; 
 }
 .pill_draft {
     background-color:#d2d2d2;
@@ -277,6 +277,13 @@ button {
 button:hover {
     color:#393939; 
     border-radius:20px;
+    
+}
+button:active {
+    color:#393939; 
+    border-radius:20px;
+    text-decoration:underline;
+    background-color: rgb(149, 149, 149);
 }
 .output {
     border: 0px solid #333;
@@ -391,5 +398,9 @@ table a {
 }
 table a:hover {
     color:black;
-    text-decoration:none;
+    text-decoration:underline;
+}
+table a:active {
+    color:black;
+    text-decoration:underline;
 }
