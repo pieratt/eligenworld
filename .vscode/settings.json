@@ -1,0 +1,6 @@
+{
+    "javascript.suggest.enabled": false,
+    "typescript.suggest.enabled": false,
+    "html.autoClosingTags": false,
+    "html.autoCreateQuotes": false
+}
